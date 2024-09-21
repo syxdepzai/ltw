@@ -25,5 +25,24 @@ public class UserService implements IUserService {
 	    public void insert(UserModel user) {
 	        userDao.insert(user);
 	    }
+	 @Override
+	 public UserModel findByEmail(String email) {
+	     return userDao.findByEmail(email);
+	 }
+
+	 @Override
+	 public void updateResetToken(int userId, String token) {
+	     userDao.updateResetToken(userId, token);
+	 }
+
+	 @Override
+	 public UserModel findByResetToken(String token) {
+	     return userDao.findByResetToken(token);
+	 }
+
+	 @Override
+	 public void updatePassword(int userId, String newPassword) {
+	     userDao.updatePassword(userId, newPassword);
+	 }
 }
 
